@@ -13,7 +13,88 @@
 
 # Terraform AWS API Gateway Enable CORS
 
-TBD
+A Terraform module to add an OPTIONS method to allow Cross-Origin Resource
+Sharing (CORS) preflight requests.
+
+## Usage
+
+``` hcl
+module "cors" {
+  source = "github.com/squidfunk/terraform-aws-api-gateway-enable-cors"
+  version = "0.1.0"
+
+  api_id          = "<api_id>"
+  api_resource_id = "<api_resource_id>"
+}
+```
+
+By default, this will create a new `MOCK` endpoint on the provided API Gateway
+resource allowing CORS preflight requests for **all methods** and
+**all origins** by default. Of course this can be customized using variables
+as stated in the next section.
+
+## Configuration
+
+The following variables can be configured:
+
+### Required
+
+#### `api_id`
+
+- **Description**: API identifier
+- **Default**: `none`
+
+#### `api_resource_id`
+
+- **Description**: API resource identifier
+- **Default**: `none`
+
+### Optional
+
+#### `allowed_headers`
+
+- **Description**: Allowed headers (`Access-Control-Allow-Headers`)
+- **Default**:
+
+    ``` hcl
+    [
+      "Content-Type",
+      "X-Amz-Date",
+      "Authorization",
+      "X-Api-Key",
+      "X-Amz-Security-Token"
+    ]
+    ```
+
+#### `allowed_methods`
+
+- **Description**: Allowed methods (`Access-Control-Allow-Methods`)
+- **Default**:
+
+    ``` hcl
+    [
+      "OPTIONS",
+      "HEAD",
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ]
+    ```
+#### `allowed_origin`
+
+- **Description**: Allowed origin (`Access-Control-Allow-Origin`)
+- **Default**: `"*"`
+
+#### `allowed_max_age`
+
+- **Description**: Allowed caching time (`Access-Control-Allow-Max-Age`)
+- **Default**: `"7200"`
+
+### Outputs
+
+None.
 
 ## License
 
