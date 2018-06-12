@@ -51,10 +51,10 @@ resource "aws_api_gateway_integration_response" "_" {
   status_code = 200
 
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = "'${join(",", ${var.allow_headers}}'"
-    "method.response.header.Access-Control-Allow-Methods" = "'${join(",", ${var.allow_methods}}'"
-    "method.response.header.Access-Control-Allow-Origin"  = "'${var.allow_origin}'"
-    "method.response.header.Access-Control-Max-Age"       = "'${var.allow_max_age}'"
+    "method.response.header.Access-Control-Allow-Headers" = "'${join(",", ${var.allowed_headers}}'"
+    "method.response.header.Access-Control-Allow-Methods" = "'${join(",", ${var.allowed_methods}}'"
+    "method.response.header.Access-Control-Allow-Origin"  = "'${var.allowed_origin}'"
+    "method.response.header.Access-Control-Max-Age"       = "'${var.allowed_max_age}'"
   }
 
   depends_on = [
