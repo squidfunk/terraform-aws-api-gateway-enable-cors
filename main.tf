@@ -76,6 +76,10 @@ resource "aws_api_gateway_method_response" "_" {
     "method.response.header.Access-Control-Max-Age"       = true
   }
 
+  response_models = {
+    "application/json" = "Empty"
+  }
+
   depends_on = [
     "aws_api_gateway_method._",
   ]
