@@ -13,6 +13,8 @@
 
 # Terraform AWS API Gateway Enable CORS
 
+[![Join the chat at https://gitter.im/squidfunk/terraform-aws-api-gateway-enable-cors](https://badges.gitter.im/squidfunk/terraform-aws-api-gateway-enable-cors.svg)](https://gitter.im/squidfunk/terraform-aws-api-gateway-enable-cors?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A Terraform module to add an OPTIONS method to allow Cross-Origin Resource
 Sharing (CORS) preflight requests.
 
