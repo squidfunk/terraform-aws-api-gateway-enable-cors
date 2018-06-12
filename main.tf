@@ -51,8 +51,8 @@ resource "aws_api_gateway_integration_response" "_" {
   status_code = 200
 
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = "'${join(",", ${var.allowed_headers}}'"
-    "method.response.header.Access-Control-Allow-Methods" = "'${join(",", ${var.allowed_methods}}'"
+    "method.response.header.Access-Control-Allow-Headers" = "'${join(",", var.allowed_headers)}'"
+    "method.response.header.Access-Control-Allow-Methods" = "'${join(",", var.allowed_methods)}'"
     "method.response.header.Access-Control-Allow-Origin"  = "'${var.allowed_origin}'"
     "method.response.header.Access-Control-Max-Age"       = "'${var.allowed_max_age}'"
   }
@@ -64,8 +64,8 @@ resource "aws_api_gateway_integration_response" "_" {
 
 # aws_api_gateway_method_response._
 resource "aws_api_gateway_method_response" "_" {
-  rest_api_id = "${aws_api_gateway_rest_api._.id}"
-  resource_id = "${aws_api_gateway_rest_api._.root_resource_id}"
+  rest_api_id = "${var.api_id}"
+  resource_id = "${var.api_resource_id}"
   http_method = "${aws_api_gateway_method._.http_method}"
   status_code = 200
 
