@@ -92,6 +92,11 @@ The following variables can be configured:
 - **Description**: Allowed caching time (`Access-Control-Allow-Max-Age`)
 - **Default**: `"7200"`
 
+#### `allow_credentials`
+
+- **Description**: Allow credentials (`Access-Control-Allow-Credentials`)
+- **Default**: `false`
+
 ### Outputs
 
 None.
