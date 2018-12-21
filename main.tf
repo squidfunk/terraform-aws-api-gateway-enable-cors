@@ -50,10 +50,7 @@ resource "aws_api_gateway_integration_response" "_" {
   http_method = "${aws_api_gateway_method._.http_method}"
   status_code = 200
 
-  response_parameters = "${zipmap(
-      local.parameters,
-      local.header_values
-  )}"
+  response_parameters = "${local.integration_parameters}"
 
   depends_on = [
     "aws_api_gateway_integration._",
@@ -68,10 +65,7 @@ resource "aws_api_gateway_method_response" "_" {
   http_method = "${aws_api_gateway_method._.http_method}"
   status_code = 200
 
-  response_parameters = "${zipmap(
-      local.parameters,
-      split("|", replace(join("|", local.parameters), "/[^|]+/", "true"))
-  )}"
+  response_parameters = "${local.method_parameters}"
 
   response_models = {
     "application/json" = "Empty"
