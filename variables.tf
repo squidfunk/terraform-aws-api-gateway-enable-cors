@@ -36,23 +36,23 @@ variable "api_resource_id" {
 # Variables: CORS-related
 # -----------------------------------------------------------------------------
 
-# var.allowed_headers
-variable "allowed_headers" {
-  description = "Allowed headers"
+# var.allow_headers
+variable "allow_headers" {
+  description = "Allow headers"
   type        = "list"
 
   default = [
+    "Authorization",
     "Content-Type",
     "X-Amz-Date",
-    "Authorization",
-    "X-Api-Key",
     "X-Amz-Security-Token",
+    "X-Api-Key",
   ]
 }
 
-# var.allowed_methods
-variable "allowed_methods" {
-  description = "Allowed methods"
+# var.allow_methods
+variable "allow_methods" {
+  description = "Allow methods"
   type        = "list"
 
   default = [
@@ -66,21 +66,21 @@ variable "allowed_methods" {
   ]
 }
 
-# var.allowed_origin
-variable "allowed_origin" {
-  description = "Allowed origin"
+# var.allow_origin
+variable "allow_origin" {
+  description = "Allow origin"
   type        = "string"
   default     = "*"
 }
 
-# var.allowed_max_age
-variable "allowed_max_age" {
-  description = "Allowed response caching time"
+# var.allow_max_age
+variable "allow_max_age" {
+  description = "Allow response caching time"
   type        = "string"
   default     = "7200"
 }
 
-# var.allow_credentials
+# var.allowed_credentials
 variable "allow_credentials" {
   description = "Allow credentials"
   default     = false

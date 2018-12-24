@@ -50,11 +50,11 @@ resource "aws_api_gateway_integration_response" "_" {
   http_method = "${aws_api_gateway_method._.http_method}"
   status_code = 200
 
-  response_parameters = "${local.integration_parameters}"
+  response_parameters = "${local.integration_response_parameters}"
 
   depends_on = [
     "aws_api_gateway_integration._",
-    "aws_api_gateway_method_response._"
+    "aws_api_gateway_method_response._",
   ]
 }
 
@@ -65,7 +65,7 @@ resource "aws_api_gateway_method_response" "_" {
   http_method = "${aws_api_gateway_method._.http_method}"
   status_code = 200
 
-  response_parameters = "${local.method_parameters}"
+  response_parameters = "${local.method_response_parameters}"
 
   response_models = {
     "application/json" = "Empty"

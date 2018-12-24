@@ -21,7 +21,7 @@ Sharing (CORS) preflight requests.
 ``` hcl
 module "cors" {
   source = "github.com/squidfunk/terraform-aws-api-gateway-enable-cors"
-  version = "0.1.0"
+  version = "0.2.0"
 
   api_id          = "<api_id>"
   api_resource_id = "<api_resource_id>"
@@ -51,24 +51,24 @@ The following variables can be configured:
 
 ### Optional
 
-#### `allowed_headers`
+#### `allow_headers`
 
-- **Description**: Allowed headers (`Access-Control-Allow-Headers`)
+- **Description**: Allow headers (`Access-Control-Allow-Headers`)
 - **Default**:
 
     ``` hcl
     [
+      "Authorization",
       "Content-Type",
       "X-Amz-Date",
-      "Authorization",
-      "X-Api-Key",
-      "X-Amz-Security-Token"
+      "X-Amz-Security-Token",
+      "X-Api-Key"
     ]
     ```
 
-#### `allowed_methods`
+#### `allow_methods`
 
-- **Description**: Allowed methods (`Access-Control-Allow-Methods`)
+- **Description**: Allow methods (`Access-Control-Allow-Methods`)
 - **Default**:
 
     ``` hcl
@@ -82,20 +82,20 @@ The following variables can be configured:
       "DELETE"
     ]
     ```
-#### `allowed_origin`
+#### `allow_origin`
 
-- **Description**: Allowed origin (`Access-Control-Allow-Origin`)
+- **Description**: Allow origin (`Access-Control-Allow-Origin`)
 - **Default**: `"*"`
 
-#### `allowed_max_age`
+#### `allow_max_age`
 
-- **Description**: Allowed caching time (`Access-Control-Allow-Max-Age`)
+- **Description**: Allow caching time (`Access-Control-Allow-Max-Age`)
 - **Default**: `"7200"`
 
 #### `allow_credentials`
 
 - **Description**: Allow credentials (`Access-Control-Allow-Credentials`)
-- **Default**: `false`
+- **Default**: `none`
 
 ### Outputs
 
