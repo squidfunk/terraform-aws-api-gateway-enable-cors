@@ -50,15 +50,11 @@ resource "aws_api_gateway_integration_response" "_" {
   http_method = "${aws_api_gateway_method._.http_method}"
   status_code = 200
 
-  response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = "'${join(",", var.allowed_headers)}'"
-    "method.response.header.Access-Control-Allow-Methods" = "'${join(",", var.allowed_methods)}'"
-    "method.response.header.Access-Control-Allow-Origin"  = "'${var.allowed_origin}'"
-    "method.response.header.Access-Control-Max-Age"       = "'${var.allowed_max_age}'"
-  }
+  response_parameters = "${local.integration_parameters}"
 
   depends_on = [
     "aws_api_gateway_integration._",
+    "aws_api_gateway_method_response._"
   ]
 }
 
@@ -69,12 +65,7 @@ resource "aws_api_gateway_method_response" "_" {
   http_method = "${aws_api_gateway_method._.http_method}"
   status_code = 200
 
-  response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = true
-    "method.response.header.Access-Control-Allow-Methods" = true
-    "method.response.header.Access-Control-Allow-Origin"  = true
-    "method.response.header.Access-Control-Max-Age"       = true
-  }
+  response_parameters = "${local.method_parameters}"
 
   response_models = {
     "application/json" = "Empty"

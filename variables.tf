@@ -79,3 +79,9 @@ variable "allowed_max_age" {
   type        = "string"
   default     = "7200"
 }
+
+# var.allow_credentials
+variable "allow_credentials" {
+  description = "Allow credentials"
+  default     = false
+}
