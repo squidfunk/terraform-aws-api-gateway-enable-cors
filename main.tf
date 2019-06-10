@@ -38,7 +38,7 @@ resource "aws_api_gateway_integration" "_" {
 
   type = "MOCK"
 
-  request_templates {
+  request_templates = {
     "application/json" = "{ \"statusCode\": 200 }"
   }
 }
