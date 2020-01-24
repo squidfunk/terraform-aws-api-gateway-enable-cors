@@ -39,7 +39,7 @@ variable "api_resource_id" {
 # var.allow_headers
 variable "allow_headers" {
   description = "Allow headers"
-  type        = "list"
+  type        = list(string)
 
   default = [
     "Authorization",
@@ -53,7 +53,7 @@ variable "allow_headers" {
 # var.allow_methods
 variable "allow_methods" {
   description = "Allow methods"
-  type        = "list"
+  type        = list(string)
 
   default = [
     "OPTIONS",
@@ -69,14 +69,14 @@ variable "allow_methods" {
 # var.allow_origin
 variable "allow_origin" {
   description = "Allow origin"
-  type        = "string"
+  type        = string
   default     = "*"
 }
 
 # var.allow_max_age
 variable "allow_max_age" {
   description = "Allow response caching time"
-  type        = "string"
+  type        = string
   default     = "7200"
 }
 
