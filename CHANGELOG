@@ -1,3 +1,7 @@
+terraform-aws-api-gateway-enable-cors-0.3.1 (2020-01-27)
+
+  * Fixed terraform-0.12.6 deprecations
+
 terraform-aws-api-gateway-enable-cors-0.3.0 (2019-06-10)
 
   * Upgraded to terraform-0.12.x
