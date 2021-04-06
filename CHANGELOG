@@ -1,3 +1,7 @@
+terraform-aws-api-gateway-enable-cors-0.3.2 (2021-04-06)
+
+  * Fixed #10: 500 error on OPTIONS when using */* in binary media types
+
 terraform-aws-api-gateway-enable-cors-0.3.1 (2020-01-27)
 
   * Fixed terraform-0.12.6 deprecations
