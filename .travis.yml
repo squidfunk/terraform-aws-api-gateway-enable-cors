@@ -26,7 +26,7 @@ git:
 
 # Install Terraform
 install:
-  - curl -fSL "https://releases.hashicorp.com/terraform/0.12.1/terraform_0.12.1_linux_amd64.zip" -o terraform.zip
+  - curl -fSL "https://releases.hashicorp.com/terraform/0.15.0/terraform_0.15.0_linux_amd64.zip" -o terraform.zip
   - sudo unzip terraform.zip -d /opt/terraform
   - sudo ln -s /opt/terraform/terraform /usr/bin/terraform
   - rm -f terraform.zip
