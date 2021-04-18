@@ -21,7 +21,7 @@ Sharing (CORS) preflight requests.
 ``` hcl
 module "cors" {
   source = "squidfunk/api-gateway-enable-cors/aws"
-  version = "0.3.2"
+  version = "0.3.3"
 
   api_id          = "<api_id>"
   api_resource_id = "<api_resource_id>"
