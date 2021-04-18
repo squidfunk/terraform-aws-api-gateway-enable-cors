@@ -1,3 +1,7 @@
+terraform-aws-api-gateway-enable-cors-0.3.3 (2021-04-18)
+
+  * Fixed #12: Switch to terraform-0.15.x `tomap` syntax
+
 terraform-aws-api-gateway-enable-cors-0.3.2 (2021-04-06)
 
   * Fixed #10: 500 error on OPTIONS when using */* in binary media types
