@@ -82,7 +82,7 @@ resource "aws_api_gateway_deployment" "_" {
 
   triggers = {
     redeployment = sha1(jsonencode([
-      aws_api_gateway_rest_api.api_gateway[each.key].id,
+      var.api_resource_id.id,
       aws_api_gateway_method._.id,
       aws_api_gateway_integration._.id,
     ]))
@@ -102,4 +102,8 @@ resource "aws_api_gateway_stage" "_" {
 
   deployment_id = aws_api_gateway_deployment._.id
   stage_name    = "prod"
+
+  depends_on = [
+    aws_api_gateway_deployment._,
+  ]
 }
