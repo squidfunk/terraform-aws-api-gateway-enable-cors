@@ -1,16 +1,3 @@
-[![Travis][travis-image]][travis-link]
-[![Gitter][gitter-image]][gitter-link]
-[![GitHub][github-image]][github-link]
-
-  [travis-image]: https://travis-ci.org/squidfunk/terraform-aws-api-gateway-enable-cors.svg?branch=master
-  [travis-link]: https://travis-ci.org/squidfunk/terraform-aws-api-gateway-enable-cors
-  [codecov-image]: https://img.shields.io/codecov/c/github/squidfunk/terraform-aws-api-gateway-enable-cors/master.svg
-  [codecov-link]: https://codecov.io/gh/squidfunk/terraform-aws-api-gateway-enable-cors
-  [gitter-image]: https://badges.gitter.im/squidfunk/terraform-aws-api-gateway-enable-cors.svg
-  [gitter-link]: https://gitter.im/squidfunk/terraform-aws-api-gateway-enable-cors
-  [github-image]: https://img.shields.io/github/release/squidfunk/terraform-aws-api-gateway-enable-cors.svg
-  [github-link]: https://github.com/squidfunk/terraform-aws-api-gateway-enable-cors/releases
-
 # Terraform AWS API Gateway Enable CORS
 
 A Terraform module to add an OPTIONS method to allow Cross-Origin Resource
